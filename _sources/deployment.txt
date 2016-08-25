@@ -1,0 +1,47 @@
+Roll Your Own
+*************
+
+Create your own full ethers.io stack.
+
+Advantages:
+
+- Can use your own domain name (although, this is coming soon)
+- Control all the code yourself
+
+Disadvantages:
+
+- Have to host your own code
+- Users will need to maintain, and re-upload accounts, even if they already use ethers.io
+
+
+Installation
+============
+
+There are 3 things you will need to install.
+
+- An Ethereum node
+- The ethers.io Server
+- A webserver hosting the ethers.io front-end
+
+Ethereum Node
+-------------
+
+How to install parity
+
+
+The ethers.io Server
+--------------------
+
+install npm, clone repo...
+
+
+Deploy the Website
+------------------
+
+Files required, optional files
+
+
+Advanced Setup
+==============
+
+

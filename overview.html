@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; ethers-io 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ethers-io 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Application Programming Interface" href="api.html"/>
+        <link rel="prev" title="Advanced Features" href="advanced-features.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ethers-io
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popular-applications.html">Popular Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#design-and-layout">Design and Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#large-numbers">Large Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serving-content">Serving Content</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hosted-on-ethers-space">Hosted on ethers.space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosted-on-s3">Hosted on S3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosted-on-heroku">Hosted on Heroku</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosted-on-ipfs">Hosted on IPFS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#application-links">Application Links</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Application Programming Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-examples.html">Advanced Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Roll Your Own</a></li>
+<li class="toctree-l1"><a class="reference internal" href="under-the-hood.html">Under the Hood</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ethers-io</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Overview</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/overview.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The <em>ethers.io</em> system works by creating an <code class="docutils literal"><span class="pre">iframe</span></code> within its user interface, which can host any web-compatible link (such as https), which can then communicate with the <em>ethers.io</em> container, which itself communicates with the <em>Ethereum</em> network.</p>
+<p>This ensures that all applications are isolated in their own sandbox, protected by web browsers&#8217; cross-origin security measures.</p>
+<div class="section" id="design-and-layout">
+<h2>Design and Layout<a class="headerlink" href="#design-and-layout" title="Permalink to this headline">¶</a></h2>
+<p>Your application&#8217;s frame has its top 75px covered by the <strong>Wallet Interface</strong>, which is semi-transparent, so you should ensure that content does not appear above the 75px mark while ensuring backgrounds fill that space. No adjustment is required for the bottom status bar.</p>
+<img alt="container layout" class="align-center" src="_images/docs-layout.png" />
+<p>The wallet user interface is always 800px wide, and centered. Depending on your design, you may or may not wish to line your application up with this. You can use the following CSS and HTML to acheive this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">style</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span><span class="o">&gt;</span>
+            <span class="o">.</span><span class="n">centerer</span> <span class="p">{</span>
+                <span class="n">margin</span><span class="o">-</span><span class="n">left</span><span class="p">:</span> <span class="mi">50</span><span class="o">%</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="n">centered</span> <span class="p">{</span>
+                <span class="n">margin</span><span class="o">-</span><span class="n">left</span><span class="p">:</span> <span class="o">-</span><span class="mi">400</span><span class="n">px</span><span class="p">;</span>
+                <span class="n">width</span><span class="p">:</span> <span class="mi">800</span><span class="n">px</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;centerer&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;centered&quot;</span><span class="o">&gt;</span>
+                <span class="n">Your</span> <span class="n">content</span> <span class="n">here</span> <span class="n">will</span> <span class="n">be</span> <span class="n">lined</span> <span class="n">up</span> <span class="k">with</span> <span class="n">the</span> <span class="n">wallet</span> <span class="ow">and</span> <span class="n">status</span> <span class="n">interface</span><span class="o">.</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="large-numbers">
+<h2>Large Numbers<a class="headerlink" href="#large-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Since ethereum deals a great deal with large numbers (far larger than JavaScript can handle losslessly), many calls require and return instances of <em>BN.js</em>, which can be accessed at <code class="docutils literal"><span class="pre">ethers.utils.BN</span></code>.</p>
+<p>Some common things you will likely want to do with <em>BN.js</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Convert</span> <span class="n">to</span> <span class="n">base</span> <span class="mi">10</span> <span class="n">number</span>
+<span class="n">var</span> <span class="n">valueBase10</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">base</span> <span class="mi">10</span> <span class="n">string</span>
+<span class="n">var</span> <span class="n">value</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ethers</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">BN</span><span class="p">(</span><span class="s1">&#39;1000000&#39;</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="n">to</span> <span class="nb">hex</span> <span class="n">string</span>
+<span class="n">var</span> <span class="n">valueHexString</span> <span class="o">=</span> <span class="s1">&#39;0x&#39;</span> <span class="o">+</span> <span class="n">value</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">hex</span> <span class="n">string</span>
+<span class="n">var</span> <span class="n">value</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ethers</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">BN</span><span class="p">(</span><span class="n">valueHexString</span><span class="o">.</span><span class="n">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">16</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Multiple</span> <span class="n">two</span> <span class="n">values</span>
+<span class="n">var</span> <span class="n">product</span> <span class="o">=</span> <span class="n">value1</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">ether</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="n">to</span> <span class="n">wei</span> <span class="p">(</span><span class="n">BN</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">wei</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">parseEther</span><span class="p">(</span><span class="s1">&#39;1.0&#39;</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">wei</span> <span class="p">(</span><span class="n">BN</span> <span class="ow">or</span> <span class="nb">hex</span> <span class="n">string</span><span class="p">)</span> <span class="n">to</span> <span class="n">ether</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">ether</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">formatEther</span><span class="p">(</span><span class="n">wei</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="serving-content">
+<h2>Serving Content<a class="headerlink" href="#serving-content" title="Permalink to this headline">¶</a></h2>
+<p>Content for <em>ethers.io</em> can be served using nearly any service or technology. All an application needs to do to be <em>ethers.io</em> ready is include the library at the end of its body:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://ethers.io/ethers-v.0.1.min.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To make life simpler, here are some quick options to host content</p>
+<div class="section" id="hosted-on-ethers-space">
+<h3>Hosted on ethers.space<a class="headerlink" href="#hosted-on-ethers-space" title="Permalink to this headline">¶</a></h3>
+<p>A free space to host simple <em>ethers.io</em> applications. Use this app to manage an application.</p>
+</div>
+<div class="section" id="hosted-on-s3">
+<h3>Hosted on S3<a class="headerlink" href="#hosted-on-s3" title="Permalink to this headline">¶</a></h3>
+<p>A very affordable alternative, which allows for high volume traffic is hosting on Amazon Web Services.</p>
+</div>
+<div class="section" id="hosted-on-heroku">
+<h3>Hosted on Heroku<a class="headerlink" href="#hosted-on-heroku" title="Permalink to this headline">¶</a></h3>
+<p>Heroku has a free tier, which should suffice for most application, especially in the development stage. Heroku offers a simple way to include dynamic content in most of the popular languages (PHP, Python, Rails, node.js, et cetera).</p>
+</div>
+<div class="section" id="hosted-on-ipfs">
+<h3>Hosted on IPFS<a class="headerlink" href="#hosted-on-ipfs" title="Permalink to this headline">¶</a></h3>
+<p>IPFS is teh future of the web, and you can most certainly host your content here, however for now, urls must link to an IPFS gateway.</p>
+</div>
+</div>
+<div class="section" id="application-links">
+<h2>Application Links<a class="headerlink" href="#application-links" title="Permalink to this headline">¶</a></h2>
+<p>And application&#8217;s link may be in the following forms:</p>
+<ul class="simple">
+<li>ethers.io/#/app-link/YOUR_URL</li>
+<li>ethers.io/#/app/APPMAP</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="Application Programming Interface" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advanced-features.html" class="btn btn-neutral" title="Advanced Features" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Richard Moore.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
