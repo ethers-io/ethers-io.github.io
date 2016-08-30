@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Common Types &mdash; ethers.io 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ethers.io 0.0.1 documentation" href="index.html"/>
+        <link rel="up" title="Application Programming Interface" href="dev-api.html"/>
+        <link rel="next" title="Wallet API" href="dev-api-wallet.html"/>
+        <link rel="prev" title="Application Programming Interface" href="dev-api.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ethers.io
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popular-applications.html">Popular Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dev-api.html">Application Programming Interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Common Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#addresses">Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#big-numbers">Big Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hex-strings">Hex Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#errors">Errors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cancelled-error">Cancelled Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#server-error">Server Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-wallet.html">Wallet API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-contracts.html">Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-blockchain.html">Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-ui.html">User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ethers.io</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="dev-api.html">Application Programming Interface</a> &raquo;</li>
+      
+    <li>Common Types</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dev-api-common.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="common-types">
+<h1>Common Types<a class="headerlink" href="#common-types" title="Permalink to this headline">¶</a></h1>
+<p>There are several parameter formats and types that come up often:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#addresses">Addresses</a> &#8211; Ethereum Accounts and Contracts all have an address, which is needed to interact with them</li>
+<li><a class="reference internal" href="#id2">Big Numbers</a> (BN.js) &#8211; Precise numbers to work around JavaScripts lossy floating point system</li>
+<li><a class="reference internal" href="#id3">Hex Strings</a> &#8211; Strings of hexidecimal encoded binary data and numbers</li>
+<li><cite>Errors</cite> &#8211; An error indicating the user (explicitly or implicitly) cancelled an operation</li>
+</ul>
+<div class="section" id="addresses">
+<span id="id1"></span><h2>Addresses<a class="headerlink" href="#addresses" title="Permalink to this headline">¶</a></h2>
+<p>Addresses come in many formats, but all blach...</p>
+<ul class="simple">
+<li>Hex String</li>
+<li>ICAP Addresses</li>
+<li>Checksum Address</li>
+</ul>
+<p>To convert between the various formats:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Get</span> <span class="n">an</span> <span class="n">ICAP</span> <span class="n">address</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">any</span> <span class="n">address</span> <span class="nb">format</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">icapAddress</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">getIcapAddress</span><span class="p">(</span><span class="n">address</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Get</span> <span class="n">a</span> <span class="n">checksum</span> <span class="n">address</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">any</span> <span class="n">address</span> <span class="nb">format</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">address</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">getAddress</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="big-numbers">
+<span id="id2"></span><h2>Big Numbers<a class="headerlink" href="#big-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Since <strong>Ethereum</strong> deals a great deal with large numberic values (far larger
+than JavaScript can handle without <a class="reference external" href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">loss of precission</a>), many calls require and return instances
+of <strong>BN.js</strong>, which can be accessed at <code class="docutils literal"><span class="pre">ethers.utils.BN</span></code>.</p>
+<p>Some common things you will likely want to do with <strong>BN.js</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Convert</span> <span class="n">to</span> <span class="n">base</span> <span class="mi">10</span> <span class="n">number</span>
+<span class="n">var</span> <span class="n">valueBase10</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">base</span> <span class="mi">10</span> <span class="n">string</span>
+<span class="n">var</span> <span class="n">value</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ethers</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">BN</span><span class="p">(</span><span class="s1">&#39;1000000&#39;</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="n">to</span> <span class="nb">hex</span> <span class="n">string</span>
+<span class="n">var</span> <span class="n">valueHexString</span> <span class="o">=</span> <span class="s1">&#39;0x&#39;</span> <span class="o">+</span> <span class="n">value</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">hex</span> <span class="n">string</span>
+<span class="n">var</span> <span class="n">value</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ethers</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">BN</span><span class="p">(</span><span class="n">valueHexString</span><span class="o">.</span><span class="n">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">16</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Multiple</span> <span class="n">two</span> <span class="n">values</span>
+<span class="n">var</span> <span class="n">product</span> <span class="o">=</span> <span class="n">value1</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">ether</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="n">to</span> <span class="n">wei</span> <span class="p">(</span><span class="n">BN</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">wei</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">parseEther</span><span class="p">(</span><span class="s1">&#39;1.0&#39;</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="kn">from</span> <span class="nn">wei</span> <span class="p">(</span><span class="n">BN</span> <span class="ow">or</span> <span class="nb">hex</span> <span class="n">string</span><span class="p">)</span> <span class="n">to</span> <span class="n">ether</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">ether</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">formatEther</span><span class="p">(</span><span class="n">wei</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For the complete documentation on <strong>BN.js</strong>, see <a class="reference external" href="https://github.com/indutny/bn.js">BN.js on GitHub</a>.</p>
+</div>
+<div class="section" id="hex-strings">
+<span id="id3"></span><h2>Hex Strings<a class="headerlink" href="#hex-strings" title="Permalink to this headline">¶</a></h2>
+<p>Often functions deal with binary data, which should be specified using a hex
+string. Functions which require big numbers can also be passed the
+hex string equivalent.</p>
+<p>It is important to note, it <strong>MUST</strong> be a string, and it <strong>MUST</strong> begin with
+the prefix <code class="docutils literal"><span class="pre">0x</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">binaryHelloWorld</span> <span class="o">=</span> <span class="s1">&#39;0x48656c6c6f576f726c64&#39;</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">thirtySeven</span> <span class="o">=</span> <span class="s1">&#39;0x25&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cancelled-error">
+<span id="id4"></span><h3>Cancelled Error<a class="headerlink" href="#cancelled-error" title="Permalink to this headline">¶</a></h3>
+<p>Any operation which requires the user to accept or decline, may reject with an error
+with the message <cite>cancelled</cite>. This could occur without user interaction, if for example,
+the application attempts to send a transaction, but the user is new and has not added
+an account.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">somePromise</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">call</span> <span class="n">returned</span> <span class="n">a</span> <span class="n">result</span>
+
+<span class="p">},</span> <span class="n">function</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">===</span> <span class="s1">&#39;cancelled&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Whatever</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">done</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="server-error">
+<span id="id5"></span><h3>Server Error<a class="headerlink" href="#server-error" title="Permalink to this headline">¶</a></h3>
+<p>Any operation that requests further information from the <strong>ethers.io services</strong>
+may reject with an error with the message <code class="docutils literal"><span class="pre">server</span> <span class="pre">error</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">somePromise</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">call</span> <span class="n">returned</span> <span class="n">a</span> <span class="n">result</span>
+
+<span class="p">},</span> <span class="n">function</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">===</span> <span class="s1">&#39;server error&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">Whatever</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">done</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dev-api-wallet.html" class="btn btn-neutral float-right" title="Wallet API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dev-api.html" class="btn btn-neutral" title="Application Programming Interface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Richard Moore.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

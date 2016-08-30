@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Blockchain &mdash; ethers.io 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ethers.io 0.0.1 documentation" href="index.html"/>
+        <link rel="up" title="Application Programming Interface" href="dev-api.html"/>
+        <link rel="next" title="User Interface" href="dev-api-ui.html"/>
+        <link rel="prev" title="Contracts" href="dev-api-contracts.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ethers.io
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popular-applications.html">Popular Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dev-api.html">Application Programming Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dev-api-common.html">Common Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-wallet.html">Wallet API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-contracts.html">Contracts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Blockchain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accounts">Accounts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-getbalance-address-blocknumber">ethers.blockchain.getBalance(address[, blockNumber])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-gettransactioncount-address-blocknumber">ethers.blockchain.getTransactionCount(address[, blockNumber])</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-code">Running Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-call-transaction-options">ethers.blockchain.call(transaction[, options])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-estimategas-transaction-options">ethers.blockchain.estimateGas(transaction[, options])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-sendtransaction-signedtransaction">ethers.blockchain.sendTransaction(signedTransaction)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#state">State</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-getblock-blockhashornumber">ethers.blockchain.getBlock(blockHashOrNumber)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-getgasprice">ethers.blockchain.getGasPrice()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-gettransaction-hash">ethers.blockchain.getTransaction(hash)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ethers-blockchain-gettransactionreceipt-hash">ethers.blockchain.getTransactionReceipt(hash)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#event-ethers-blockchian-onblock">Event: ethers.blockchian.onblock</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-ui.html">User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ethers.io</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="dev-api.html">Application Programming Interface</a> &raquo;</li>
+      
+    <li>Blockchain</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dev-api-blockchain.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blockchain">
+<h1>Blockchain<a class="headerlink" href="#blockchain" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accounts">
+<h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ethers-blockchain-getbalance-address-blocknumber">
+<h3>ethers.blockchain.getBalance(address[, blockNumber])<a class="headerlink" href="#ethers-blockchain-getbalance-address-blocknumber" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-blockchain-gettransactioncount-address-blocknumber">
+<h3>ethers.blockchain.getTransactionCount(address[, blockNumber])<a class="headerlink" href="#ethers-blockchain-gettransactioncount-address-blocknumber" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-code">
+<h2>Running Code<a class="headerlink" href="#running-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ethers-blockchain-call-transaction-options">
+<h3>ethers.blockchain.call(transaction[, options])<a class="headerlink" href="#ethers-blockchain-call-transaction-options" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-blockchain-estimategas-transaction-options">
+<h3>ethers.blockchain.estimateGas(transaction[, options])<a class="headerlink" href="#ethers-blockchain-estimategas-transaction-options" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-blockchain-sendtransaction-signedtransaction">
+<h3>ethers.blockchain.sendTransaction(signedTransaction)<a class="headerlink" href="#ethers-blockchain-sendtransaction-signedtransaction" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="state">
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ethers-blockchain-getblock-blockhashornumber">
+<h3>ethers.blockchain.getBlock(blockHashOrNumber)<a class="headerlink" href="#ethers-blockchain-getblock-blockhashornumber" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-blockchain-getgasprice">
+<h3>ethers.blockchain.getGasPrice()<a class="headerlink" href="#ethers-blockchain-getgasprice" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-blockchain-gettransaction-hash">
+<h3>ethers.blockchain.getTransaction(hash)<a class="headerlink" href="#ethers-blockchain-gettransaction-hash" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-blockchain-gettransactionreceipt-hash">
+<h3>ethers.blockchain.getTransactionReceipt(hash)<a class="headerlink" href="#ethers-blockchain-gettransactionreceipt-hash" title="Permalink to this headline">¶</a></h3>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="event-ethers-blockchian-onblock">
+<h2>Event: ethers.blockchian.onblock<a class="headerlink" href="#event-ethers-blockchian-onblock" title="Permalink to this headline">¶</a></h2>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span><span class="n">blockchain</span><span class="o">.</span><span class="n">onblock</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">blockNumber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;New block mined: &#39;</span> <span class="o">+</span> <span class="n">blockNumber</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dev-api-ui.html" class="btn btn-neutral float-right" title="User Interface" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dev-api-contracts.html" class="btn btn-neutral" title="Contracts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Richard Moore.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

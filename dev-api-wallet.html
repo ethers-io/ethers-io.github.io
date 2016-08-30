@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Wallet API &mdash; ethers.io 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ethers.io 0.0.1 documentation" href="index.html"/>
+        <link rel="up" title="Application Programming Interface" href="dev-api.html"/>
+        <link rel="next" title="Contracts" href="dev-api-contracts.html"/>
+        <link rel="prev" title="Common Types" href="dev-api-common.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ethers.io
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="popular-applications.html">Popular Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dev-api.html">Application Programming Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dev-api-common.html">Common Types</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Wallet API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ethers-getaccount">ethers.getAccount()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ethers-getnetwork">ethers.getNetwork()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ethers-send-destinationaddress-amountwei">ethers.send([destinationAddress][, amountWei])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ethers-sendtransaction-transaction-overrides">ethers.sendTransaction(transaction[, overrides])</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-ethers-onaccount">Event: ethers.onaccount</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-contracts.html">Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-blockchain.html">Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-ui.html">User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ethers.io</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="dev-api.html">Application Programming Interface</a> &raquo;</li>
+      
+    <li>Wallet API</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/dev-api-wallet.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wallet-api">
+<h1>Wallet API<a class="headerlink" href="#wallet-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ethers-getaccount">
+<h2>ethers.getAccount()<a class="headerlink" href="#ethers-getaccount" title="Permalink to this headline">¶</a></h2>
+<p>If the user has an account, this call will request it and return it as a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>. If the user does not have an account the result will be null.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span><span class="n">getAccount</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Account address: &#39;</span> <span class="o">+</span> <span class="n">address</span><span class="p">);</span>
+<span class="p">},</span> <span class="n">function</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Error: &#39;</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-getnetwork">
+<h2>ethers.getNetwork()<a class="headerlink" href="#ethers-getnetwork" title="Permalink to this headline">¶</a></h2>
+<p>Returns a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that indicates the name of the network the user is attached to.
+It can be one of 3 values:</p>
+<ul class="simple">
+<li><strong>morden</strong> &#8211; The test network, ether is free and plentiful</li>
+<li><strong>homestead</strong> &#8211; The live, main network</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span><span class="n">getNetwork</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">network</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">network</span> <span class="o">===</span> <span class="s1">&#39;homestead&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;You are on mainnet.&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;You are on testnet.&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-send-destinationaddress-amountwei">
+<h2>ethers.send([destinationAddress][, amountWei])<a class="headerlink" href="#ethers-send-destinationaddress-amountwei" title="Permalink to this headline">¶</a></h2>
+<p>Prompts the user (in the ethers.io wallet interface) for an address and an amount
+to send. Returns a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to the transaction hash of the
+transaction if successful, and reject if any error (ex. cancelled by user)
+occurs.</p>
+<dl class="docutils">
+<dt>destinationAddress &#8212; <em>Optional</em></dt>
+<dd>The <a class="reference internal" href="dev-api-common.html#addresses"><span class="std std-ref">address</span></a> to fill in for the user in the wallet user interface.</dd>
+<dt>amountWei &#8212; <em>Optional</em></dt>
+<dd>The amount to send (in Wei), which may be specified as a <a class="reference internal" href="dev-api-common.html#hex-strings"><span class="std std-ref">Hex String</span></a> or a <a class="reference internal" href="dev-api-common.html#big-numbers"><span class="std std-ref">Big Number</span></a>.</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">These</span> <span class="n">are</span> <span class="nb">all</span> <span class="n">equivalent</span>
+<span class="n">var</span> <span class="n">amountWei</span> <span class="o">=</span> <span class="s1">&#39;0xde0b6b3a7640000&#39;</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">amountWei</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ethers</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">BN</span><span class="p">(</span><span class="s1">&#39;1000000000000000000&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="mi">18</span> <span class="n">zeros</span>
+<span class="n">var</span> <span class="n">amountWei</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">parseEther</span><span class="p">(</span><span class="s1">&#39;1.0&#39;</span><span class="p">);</span>
+
+<span class="n">ethers</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="s1">&#39;0x).then(function(hash) {</span>
+<span class="p">},</span> <span class="n">function</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Error: &#39;</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ethers-sendtransaction-transaction-overrides">
+<h2>ethers.sendTransaction(transaction[, overrides])<a class="headerlink" href="#ethers-sendtransaction-transaction-overrides" title="Permalink to this headline">¶</a></h2>
+<p>Prompts the user (in the ethers.io wallet interface) to accept or decline a
+transaction. Returns a <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to the transaction hash of the
+transaction if successful, and reject if any error (ex. cancelled by user)
+occurs.</p>
+<dl class="docutils">
+<dt>transaction:</dt>
+<dd>transaction object... &#64;TODO: Explain more</dd>
+<dt>overrides:</dt>
+<dd>overrides object... &#64;TODO: Explain more</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">transaction</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">target</span> <span class="n">account</span> <span class="n">address</span> <span class="ow">or</span> <span class="n">contract</span> <span class="n">address</span> <span class="n">to</span> <span class="n">send</span> <span class="n">to</span>
+    <span class="n">to</span><span class="p">:</span> <span class="s1">&#39;0x0123456789012345678901234567890123456789&#39;</span><span class="p">,</span>
+
+    <span class="o">//</span> <span class="n">The</span> <span class="n">data</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">transaction</span>
+    <span class="n">data</span><span class="p">:</span> <span class="s1">&#39;0xdeafbeef&#39;</span><span class="p">,</span>
+
+    <span class="o">//</span> <span class="n">The</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">ether</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Wei</span><span class="p">)</span> <span class="n">to</span> <span class="n">send</span> <span class="p">[</span><span class="n">default</span><span class="p">:</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">value</span><span class="p">:</span> <span class="s1">&#39;0x1234&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Most</span> <span class="n">overrides</span> <span class="n">should</span> <span class="n">never</span> <span class="n">be</span> <span class="n">necessary</span><span class="p">,</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">provided</span> <span class="n">only</span> <span class="k">for</span>
+<span class="o">//</span> <span class="n">rare</span> <span class="n">instances</span> <span class="n">where</span> <span class="n">an</span> <span class="n">application</span> <span class="ow">is</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">do</span> <span class="n">something</span> <span class="n">border</span><span class="o">-</span><span class="n">line</span>
+<span class="o">//</span> <span class="n">insane</span> <span class="p">(</span><span class="n">yet</span> <span class="n">possibly</span> <span class="n">useful</span><span class="p">)</span><span class="o">.</span> <span class="p">:)</span>
+<span class="o">//</span>
+<span class="o">//</span> <span class="n">Any</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">here</span> <span class="n">may</span> <span class="n">be</span> <span class="n">specified</span> <span class="k">as</span> <span class="n">a</span> <span class="n">number</span><span class="p">,</span> <span class="nb">hex</span> <span class="n">string</span> <span class="ow">or</span> <span class="n">Big</span> <span class="n">Number</span><span class="o">.</span>
+<span class="n">var</span> <span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">gasLimit</span><span class="p">:</span> <span class="mi">3000000</span><span class="p">,</span>  <span class="o">//</span> <span class="n">You</span> <span class="n">should</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">change</span> <span class="n">this</span>
+    <span class="n">gasPrice</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>   <span class="o">//</span> <span class="n">You</span> <span class="n">should</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">change</span> <span class="n">this</span>
+    <span class="n">nonce</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>        <span class="o">//</span> <span class="n">You</span> <span class="n">should</span> <span class="n">NEVER</span> <span class="n">need</span> <span class="n">this</span>
+<span class="p">}</span>
+
+<span class="n">ethers</span><span class="o">.</span><span class="n">sendTransaction</span><span class="p">(</span><span class="n">transaction</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">txid</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;This transaction was submitted with the hash: &#39;</span> <span class="o">+</span> <span class="n">txid</span><span class="p">);</span>
+
+<span class="p">},</span> <span class="n">function</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">message</span> <span class="o">===</span> <span class="s1">&#39;cancelled&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;The user cancelled this transaction.&#39;</span><span class="p">);</span>
+
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Error: &#39;</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="event-ethers-onaccount">
+<h2>Event: ethers.onaccount<a class="headerlink" href="#event-ethers-onaccount" title="Permalink to this headline">¶</a></h2>
+<p>This event will only be triggered after a call to getAccount, and
+will notify the application that the currently active account has changed.</p>
+<dl class="data">
+<dt id="ethers.onaccount">
+<code class="descclassname">ethers.</code><code class="descname">onaccount</code><a class="headerlink" href="#ethers.onaccount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hello world?</p>
+</dd></dl>
+
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span><span class="n">onaccount</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">address</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;The user has switched to account: &#39;</span> <span class="o">+</span> <span class="n">address</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dev-api-contracts.html" class="btn btn-neutral float-right" title="Contracts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dev-api-common.html" class="btn btn-neutral" title="Common Types" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Richard Moore.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

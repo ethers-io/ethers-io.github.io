@@ -1,28 +1,10 @@
-Tutorials
-*********
-
-Here are asome basic examples of ethers.io projects.
-
-Create
-======
-
-Write and Deploy a Smart Contract
----------------------------------
-
-Talk to a Smart Contract
-------------------------
-
-Deploy an Application
----------------------
-
-
-Other Examples
-==============
+Examples
+********
 
 Often learning by example is blah...
 
 Donate Button
--------------
+=============
 
 A quick and simple way to request donations on any page rendered inside ethers.io.
 
@@ -34,7 +16,7 @@ Any ethers.io enabled site can add a donate button, simply be including the Java
 
 
 Zen Messenger
--------------
+=============
 
 A simple one-page application.
 
@@ -54,8 +36,5 @@ Blockchain Explorer
 -------------------
 
 
-
 Lottery
 -------
-
-

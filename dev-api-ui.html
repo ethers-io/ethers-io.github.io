@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced Features &mdash; ethers.io 0.0.1 documentation</title>
+  <title>User Interface &mdash; ethers.io 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,9 @@
 
   
     <link rel="top" title="ethers.io 0.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Overview" href="dev-overview.html"/>
-        <link rel="prev" title="Popular Applications" href="popular-applications.html"/> 
+        <link rel="up" title="Application Programming Interface" href="dev-api.html"/>
+        <link rel="next" title="Examples" href="dev-examples.html"/>
+        <link rel="prev" title="Blockchain" href="dev-api-blockchain.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,26 +83,26 @@
             
             
                 <p class="caption"><span class="caption-text">User Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="popular-applications.html">Popular Applications</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#managing-multiple-accounts">Managing Multiple Accounts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#renaming-accounts">Renaming Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#download-json-wallet">Download JSON Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deleting-accounts">Deleting Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-new-accounts">Create New Accounts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#import-json-wallets">Import JSON Wallets</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev-api.html">Application Programming Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="dev-api.html">Application Programming Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dev-api-common.html">Common Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-wallet.html">Wallet API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-contracts.html">Contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-blockchain.html">Blockchain</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notifications">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dev-examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
 </ul>
@@ -134,11 +135,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Advanced Features</li>
+          <li><a href="dev-api.html">Application Programming Interface</a> &raquo;</li>
+      
+    <li>User Interface</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/advanced-features.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/dev-api-ui.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -148,24 +151,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="advanced-features">
-<h1>Advanced Features<a class="headerlink" href="#advanced-features" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="managing-multiple-accounts">
-<h2>Managing Multiple Accounts<a class="headerlink" href="#managing-multiple-accounts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="renaming-accounts">
-<h3>Renaming Accounts<a class="headerlink" href="#renaming-accounts" title="Permalink to this headline">¶</a></h3>
+  <div class="section" id="user-interface">
+<h1>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="notifications">
+<h2>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h2>
+<p>Notifications provide a non-interactive notice to the user. For example, they are displayed to the user when an account becomes unlocked or the balance of an account changes.</p>
+<p>They may be useful for your program when it wishes to keep the user informed about the state or status of an event, but do not need distract them.</p>
+<p>Function Call:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">message</span><span class="p">[,</span> <span class="n">messageType</span><span class="p">])</span>
+</pre></div>
 </div>
-<div class="section" id="download-json-wallet">
-<h3>Download JSON Wallet<a class="headerlink" href="#download-json-wallet" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="deleting-accounts">
-<h3>Deleting Accounts<a class="headerlink" href="#deleting-accounts" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="create-new-accounts">
-<h3>Create New Accounts<a class="headerlink" href="#create-new-accounts" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="import-json-wallets">
-<h3>Import JSON Wallets<a class="headerlink" href="#import-json-wallets" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">message:</th><td class="field-body">The message to show in the notification. The title of a notification is the application&#8217;s name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">messageType:</th><td class="field-body">This indicates what icon to display in a notification. It should be one of <strong>&#8220;info&#8221;</strong>, <strong>&#8220;success&#8221;</strong> or <strong>&#8220;error&#8221;</strong>. (default: <strong>&#8220;info&#8221;</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ethers</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="n">ethers</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">);</span>
+<span class="n">ethers</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="s2">&quot;There was an error&quot;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">);</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -177,10 +187,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dev-overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dev-examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="popular-applications.html" class="btn btn-neutral" title="Popular Applications" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dev-api-blockchain.html" class="btn btn-neutral" title="Blockchain" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

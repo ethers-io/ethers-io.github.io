@@ -23,11 +23,35 @@ Place screenshot of ether.io here...
 :5. Management: Create, import, rename, download and delete accounts
 
 
-Creating an Account
-===================
+Passwords
+=========
 
-Importing a JSON Wallet
-=======================
+**Only enter your password in this UI in the top Wallet, that looks like:**
+
+
+
+Do **NOT** share your password with **ANYONE** (we will **NEVER** ask a user for their password).
+
+Do **NOT** forget your password.
+
+Keep your password **SAFE**. It is mathimatically **IMPOSSIBLE** for anyone
+to recover a forgotten password, and it **CANNOT** be reset.
+
+
+First Account
+=============
+
+The first time you use ethers.io, the top UI will present you with the two options:
+
+- **Create** New Account
+- **Import** existing JSON Wallet
+
+
+Creating a New Account
+======================
+
+Importing an existing JSON Wallet
+=================================
 
 Using the Wallet
 ================
