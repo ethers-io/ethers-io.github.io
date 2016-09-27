@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Security Concerns &mdash; ethers.io 0.0.1 documentation</title>
+  <title>Popular Applications &mdash; ethers.io 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="ethers.io 0.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Miscellaneous" href="dev-misc.html"/>
-        <link rel="prev" title="Examples" href="dev-examples.html"/> 
+        <link rel="next" title="Advanced Features" href="user-advanced-features.html"/>
+        <link rel="prev" title="Getting Started" href="user-getting-started.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,23 +82,18 @@
             
             
                 <p class="caption"><span class="caption-text">User Documentation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user-getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user-popular-applications.html">Popular Applications</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Popular Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user-advanced-features.html">Advanced Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-api.html">Application Programming Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-examples.html">Examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Security Concerns</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#shared-localstorage">Shared localStorage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cross-site-scripting-xss">Cross-Site Scripting (XSS)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cross-site-foragery-requests-csfr">Cross-Site Foragery Requests (CSFR)</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-misc.html">Miscellaneous</a></li>
 </ul>
 
@@ -130,11 +125,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Security Concerns</li>
+    <li>Popular Applications</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/dev-security-concerns.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/user-popular-applications.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -144,30 +139,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="security-concerns">
-<h1>Security Concerns<a class="headerlink" href="#security-concerns" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="shared-localstorage">
-<h2>Shared localStorage<a class="headerlink" href="#shared-localstorage" title="Permalink to this headline">¶</a></h2>
-<p>If you host mulitple applications on the same domain, or use a domain which
-is controlled by someone else (for example: wordpress), the localStorage
-across these applications will be shared.</p>
-<p>This can be a useful way to have multiple applications communicate with one
-another, but can also present a security issue, if you place sensitive data
-in the localStorage, or take actions on its value.</p>
-<p>Keep this in mind when developing applications on shared hosting.</p>
-<p>Note that <em>ethers.space</em> does not have this issue, since every application is
-hosted on its own domain name (eg. myapp.ethers.space).</p>
-</div>
-<div class="section" id="cross-site-scripting-xss">
-<h2>Cross-Site Scripting (XSS)<a class="headerlink" href="#cross-site-scripting-xss" title="Permalink to this headline">¶</a></h2>
-<p>&#64;TODO: Explain cross-site scripting, sanitizing user input and ideally not
-setting innerHTML.</p>
-</div>
-<div class="section" id="cross-site-foragery-requests-csfr">
-<h2>Cross-Site Foragery Requests (CSFR)<a class="headerlink" href="#cross-site-foragery-requests-csfr" title="Permalink to this headline">¶</a></h2>
-<p>&#64;TODO: Explain cross-site foragery requests, including session keys in URLs and
-verifying them.</p>
-</div>
+  <div class="section" id="popular-applications">
+<h1>Popular Applications<a class="headerlink" href="#popular-applications" title="Permalink to this headline">¶</a></h1>
+<p>Here are some of the more popular applications that you will probably want to install.</p>
+<p>Coming soon...</p>
 </div>
 
 
@@ -177,10 +152,10 @@ verifying them.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dev-misc.html" class="btn btn-neutral float-right" title="Miscellaneous" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="user-advanced-features.html" class="btn btn-neutral float-right" title="Advanced Features" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dev-examples.html" class="btn btn-neutral" title="Examples" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="user-getting-started.html" class="btn btn-neutral" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

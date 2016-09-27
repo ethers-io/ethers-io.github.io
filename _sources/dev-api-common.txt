@@ -16,9 +16,18 @@ Addresses
 
 Addresses come in many formats, but all blach...
 
-- Hex String
-- ICAP Addresses
-- Checksum Address
+- Hex Strings (eg. 0x1234567890abcdef1234567890abcdef12345678)
+- ICAP Addresses  (eg. XE0724JX5HRQ9R1XA24VWJM008DMOB17YBC)
+- Checksum Address (eg. 0x1234567890AbcdEF1234567890aBcdef12345678; notice uppercase and lowercase letters)
+
+The **ICAP Address** format uses the `International Bank Account Number (IBAN)`_
+format with a prefex of ``XE``.
+
+The **Checksum Address** format uses a mixture of uppercase and lowercase
+letters to encode checksum information in an address, but remains backward
+compatible with systems that do not understand checksum addresses. Because of
+this, addresses which are not checksum addresses must use entirely uppercase or
+entirely lowercase letters.
 
 To convert between the various formats::
 
@@ -131,6 +140,8 @@ Example::
 .. _loss of precission: http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
 
 .. _BN.js on GitHub: https://github.com/indutny/bn.js
+
+.. _international bank account number (iban): https://en.wikipedia.org/wiki/International_Bank_Account_Number
 
 .. _foobar: http://www.ecma-international.org/ecma-262/5.1/#sec-8.5
 .. _foobar2: http://reference.wolfram.com/language/tutorial/MachinePrecisionNumbers.html

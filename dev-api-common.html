@@ -84,9 +84,9 @@
             
                 <p class="caption"><span class="caption-text">User Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="popular-applications.html">Popular Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced-features.html">Advanced Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-popular-applications.html">Popular Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-advanced-features.html">Advanced Features</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Documentation</span></p>
 <ul class="current">
@@ -112,6 +112,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev-security-concerns.html">Security Concerns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-misc.html">Miscellaneous</a></li>
 </ul>
 
             
@@ -171,10 +172,17 @@
 <span id="id1"></span><h2>Addresses<a class="headerlink" href="#addresses" title="Permalink to this headline">¶</a></h2>
 <p>Addresses come in many formats, but all blach...</p>
 <ul class="simple">
-<li>Hex String</li>
-<li>ICAP Addresses</li>
-<li>Checksum Address</li>
+<li>Hex Strings (eg. 0x1234567890abcdef1234567890abcdef12345678)</li>
+<li>ICAP Addresses  (eg. XE0724JX5HRQ9R1XA24VWJM008DMOB17YBC)</li>
+<li>Checksum Address (eg. 0x1234567890AbcdEF1234567890aBcdef12345678; notice uppercase and lowercase letters)</li>
 </ul>
+<p>The <strong>ICAP Address</strong> format uses the <a class="reference external" href="https://en.wikipedia.org/wiki/International_Bank_Account_Number">International Bank Account Number (IBAN)</a>
+format with a prefex of <code class="docutils literal"><span class="pre">XE</span></code>.</p>
+<p>The <strong>Checksum Address</strong> format uses a mixture of uppercase and lowercase
+letters to encode checksum information in an address, but remains backward
+compatible with systems that do not understand checksum addresses. Because of
+this, addresses which are not checksum addresses must use entirely uppercase or
+entirely lowercase letters.</p>
 <p>To convert between the various formats:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Get</span> <span class="n">an</span> <span class="n">ICAP</span> <span class="n">address</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">any</span> <span class="n">address</span> <span class="nb">format</span><span class="p">)</span>
 <span class="n">var</span> <span class="n">icapAddress</span> <span class="o">=</span> <span class="n">ethers</span><span class="o">.</span><span class="n">getIcapAddress</span><span class="p">(</span><span class="n">address</span><span class="p">);</span>
